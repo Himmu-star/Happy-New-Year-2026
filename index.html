@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2026, My Ruhi 💕</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@300;400;500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pastel-pink: #ffe4e9;
+            --soft-lavender: #f3e5f5;
+            --gold: #d4af37;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fff5f7 0%, #f3e5f5 100%);
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+            color: #5d4037;
+            scroll-behavior: smooth;
+        }
+
+        .font-handwritten { font-family: 'Dancing Script', cursive; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        /* Floating Hearts Background */
+        #heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.6);
+            animation: float 10s infinite linear;
+            font-size: 1rem;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Fireworks */
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Animations */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 1s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        .typing-container::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .timeline-line {
+            width: 2px;
+            background: var(--gold);
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.3;
+        }
+
+        /* Interaction Effects */
+        .hug-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 228, 233, 0.4);
+            display: none;
+            z-index: 100;
+            animation: pulse-bg 2s infinite;
+        }
+        @keyframes pulse-bg {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            display: none;
+        }
+
+        .drop {
+            position: absolute;
+            background: rgba(173, 216, 230, 0.6);
+            width: 2px;
+            height: 10px;
+            animation: fall 1s linear infinite;
+        }
+        @keyframes fall { to { transform: translateY(100vh); } }
+
+        .btn-romantic {
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(255, 175, 189, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-romantic:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(255, 175, 189, 0.6); }
+
+        /* Mascot */
+        .mascot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .mascot:hover { transform: translateY(-10px); }
+        .mascot-bubble {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 150px;
+            font-size: 0.8rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="heart-container"></div>
+
+    <!-- Background Music (Simulated UI) -->
+    <div class="fixed top-5 right-5 z-[1001] flex items-center space-x-2">
+        <button id="musicToggle" class="bg-white/50 p-2 rounded-full backdrop-blur-md">
+            <span id="musicIcon">🎵</span>
+        </button>
+    </div>
+
+    <!-- Landing Page -->
+    <section id="landing" class="text-center">
+        <div class="max-w-2xl px-4">
+            <p class="text-xl md:text-2xl font-serif italic mb-4 fade-in">Hey Ruhi… 💕</p>
+            <p class="text-lg md:text-xl font-light mb-8 fade-in" style="transition-delay: 0.5s;">
+                Thank you so much mere har saal me itna sundar aur memorable banane ke liye ab hai 2026 ki bari.
+            </p>
+            <a href="#newyear" class="btn-romantic inline-block fade-in" style="transition-delay: 1s;">
+                Enter My Love 🌸
+            </a>
+        </div>
+    </section>
+
+    <!-- Section 1: Happy New Year -->
+    <section id="newyear" class="bg-white/20">
+        <div id="fireworks-anchor"></div>
+        <h1 class="text-4xl md:text-6xl font-serif text-center mb-6 fade-in">
+            🎉 Happy New Year <br><span class="text-pink-500">2026, My Love ❤️</span>
+        </h1>
+        <p class="text-lg md:text-xl text-center font-light max-w-xl fade-in" style="transition-delay: 0.3s;">
+            “Har saal har month aur har year mere liye special ho jata hai jab aapmere saath hote hai.”
+        </p>
+    </section>
+
+    <!-- Section 2: Digital Love Letter -->
+    <section id="letter">
+        <div class="glass p-8 md:p-12 max-w-2xl w-full shadow-xl fade-in">
+            <h2 class="font-handwritten text-3xl text-pink-500 mb-6">Dear Ruhi,</h2>
+            <div id="typewriter-text" class="font-light leading-relaxed text-lg min-h-[300px]">
+                <!-- Typing animation happens here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Interactive Actions -->
+    <section id="actions">
+        <h2 class="text-3xl font-serif mb-10 fade-in">Sending some love...</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl px-4">
+            <button onclick="showAction('hug')" class="glass p-6 text-center hover:bg-pink-100 transition-colors">
+                <span class="text-4xl block mb-2">🤗</span>
+                <span class="text-sm font-medium">Digital Hug</span>
+            </button>
+            <button onclick="showAction('kiss')" class="glass p-6 text-center hover:bg-pink-100 transition-colors">
+                <span class="text-4xl block mb-2">💋</span>
+                <span class="text-sm font-medium">Digital Kiss</span>
+            </button>
+            <button onclick="showAction('coffee')" class="glass p-6 text-center hover:bg-pink-100 transition-colors">
+                <span class="text-4xl block mb-2">☕</span>
+                <span class="text-sm font-medium">Coffee Date</span>
+            </button>
+            <button onclick="showAction('miss')" class="glass p-6 text-center hover:bg-pink-100 transition-colors">
+                <span class="text-4xl block mb-2">🥰</span>
+                <span class="text-sm font-medium">Miss You</span>
+            </button>
+        </div>
+        <div id="action-message" class="mt-8 h-8 text-pink-600 font-serif text-xl italic"></div>
+    </section>
+
+    <!-- Section 4: Our Story -->
+    <section id="story">
+        <h2 class="text-4xl font-serif mb-12 fade-in">Our Journey 📖</h2>
+        <div class="relative w-full max-w-3xl">
+            <div class="timeline-line"></div>
+            
+            <div class="flex flex-col space-y-16">
+                <!-- Event 1 -->
+                <div class="relative flex items-center justify-start md:justify-center fade-in">
+                    <div class="glass p-4 w-64 md:mr-auto">
+                        <h4 class="font-bold">Our Talk 💬</h4>
+                        <p class="text-sm">Jab pehli baar aapse baat hua tha sach kahe to ha soche to the ki bahut dur tak jana hai par ye safar itna pyara hoga ye nahi soche the.</p>
+                    </div>
+                </div>
+                <!-- Event 2 -->
+                <div class="relative flex items-center justify-end md:justify-center fade-in">
+                    <div class="glass p-4 w-64 md:ml-auto">
+                        <h4 class="font-bold">Your Smile 😊</h4>
+                        <p class="text-sm">Aapko dekh ke aapke smile ko dekh ke aapke confidence ko dekh ke jo attraction uss din hua tha wo attraction har pal har din hota hai. I love you very much but still I have attraction for you same like that physics class.</p>
+                    </div>
+                </div>
+                <!-- Event 3 -->
+                <div class="relative flex items-center justify-start md:justify-center fade-in">
+                    <div class="glass p-4 w-64 md:mr-auto">
+                        <h4 class="font-bold">Our Fight 😅</h4>
+                        <p class="text-sm">Aisa nahi hai humko aapse larna pasand nahi pyara hota hai but I really dont want to hurt you, humko khud pe itna guilt hone lagta hai ki I just want to keep you happy happier and happiest in the world.</p>
+                    </div>
+                </div>
+                <!-- Event 4 -->
+                <div class="relative flex items-center justify-end md:justify-center fade-in">
+                    <div class="glass p-4 w-64 md:ml-auto">
+                        <h4 class="font-bold">2026 Together ✨</h4>
+                        <p class="text-sm">Aur aise hi larte manate pyar karte thora bahut romance karte karte humlog 2025 ko paar karke 2026 me aa gaye so aise hi aone journy ko aage continue karenge.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Shayari -->
+    <section id="shayari" class="text-center italic">
+        <div class="max-w-xl glass p-10 fade-in">
+            <span class="text-4xl text-pink-400 block mb-4">🌙</span>
+            <div id="shayari-container">
+                <p class="text-2xl font-handwritten mb-4">“Tu samne ho to meri aankhein kaise hat jaye,<br>Meri puri duniya tujhme simat jaye.”</p>
+                <p class="text-sm text-gray-500">— For my Ruhi</p>
+            </div>
+            <button onclick="nextShayari()" class="mt-6 text-pink-300 hover:text-pink-500 transition-colors">Next Verse ✨</button>
+        </div>
+    </section>
+
+    <!-- Section 7: Promise -->
+    <section id="promise">
+        <div class="text-center max-w-2xl px-6 fade-in">
+            <h2 class="text-3xl font-serif mb-6">My Promise to You 💍</h2>
+            <p class="text-xl leading-relaxed font-light italic">
+                “In 2026 and beyond…<br>
+                I promise to love you better,<br>
+                try not to hurt you,<br>
+                and try to keep you happy every single day.”
+            </p>
+        </div>
+    </section>
+
+    <!-- Final Message -->
+    <section id="final" class="bg-pink-50">
+        <div class="text-center fade-in">
+            <p class="text-2xl font-serif mb-2 italic">“If smiles were stars,”</p>
+            <p class="text-xl font-light mb-12">I built this universe just to see yours.</p>
+            
+            <h2 class="text-4xl font-serif text-pink-600 mb-4">I Love You Ruhi ❤️</h2>
+            <p class="text-lg text-gold font-serif">Happy New Year 2026 🌸</p>
+        </div>
+    </section>
+
+    <!-- Interaction Overlays -->
+    <div id="hug-effect" class="hug-overlay"></div>
+    <div id="rain-effect" class="rain"></div>
+
+    <!-- Mascot -->
+    <div class="mascot" onclick="toggleMascot()">
+        <div id="mascot-bubble" class="mascot-bubble">You are my home 💕</div>
+        <span class="text-5xl">🧸</span>
+    </div>
+
+    <script>
+        // --- 1. Background Hearts ---
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+            heart.style.opacity = Math.random();
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            document.getElementById('heart-container').appendChild(heart);
+            setTimeout(() => heart.remove(), 10000);
+        }
+        setInterval(createHeart, 300);
+
+        // --- 2. Intersection Observer for Fade-in ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if(entry.target.id === 'letter') startTyping();
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        observer.observe(document.getElementById('letter'));
+
+        // --- 3. Typewriter Effect ---
+        const letterText = `Ruhi, aap mere life me jab se aaye hai, sab kuch ekdum pyaa pyara sa ho gaya hai. Aap mere saath hai to aisa lagta hai ki hum kuchh bhi kar sakte hai, meri sabse badi strength ho aap. 2025 mein humlog bahut sara memories banaye, kuch hansi, kuch sad, par har pal mein jab aap saath hote hai to sab lagta hai ki bas ek test tha aur hum log paas ho gaye chahe kitna bhi koi muskil period ho bit jata hai. Bahut bahut thank you mere life me aane ke liye aur mere jindagi ko itna sawarne ke liye. Ye 2026 humlog ke liye aur bhi khubsurat hone wala hai bahut kuchh unexpected hone wala hai iss saal chahe achha ho ya bura ho par aap mere saath hai to sab achha hi hoga, aur hum bhi humesha aapke liye aapke saath hai, always.You are my sukoon my love. ✨`;
+        let hasTyped = false;
+ 
+        function startTyping() {
+            if (hasTyped) return;
+            hasTyped = true;
+            let i = 0;
+            const container = document.getElementById('typewriter-text');
+            function type() {
+                if (i < letterText.length) {
+                    container.innerHTML += letterText.charAt(i);
+                    i++;
+                    setTimeout(type, 40);
+                }
+            }
+            type();
+        }
+
+        // --- 4. Love Actions ---
+        function showAction(type) {
+            const msg = document.getElementById('action-message');
+            const hug = document.getElementById('hug-effect');
+            const rain = document.getElementById('rain-effect');
+            
+            // Clear
+            msg.innerText = "";
+            hug.style.display = "none";
+            rain.style.display = "none";
+
+            if (type === 'hug') {
+                msg.innerText = "Feel my arms around you. tightly. 🤗";
+                hug.style.display = "block";
+                setTimeout(() => hug.style.display = "none", 3000);
+            } else if (type === 'kiss') {
+                msg.innerText = "A soft kiss on your forehead. 💋";
+                for(let i=0; i<15; i++) createEmoji('💖');
+            } else if (type === 'coffee') {
+                msg.innerText = "Imagining us in a peaceful place, just talking ☕";
+            } else if (type === 'miss') {
+                msg.innerText = "Har pal, har lamha, sirf aaapka yaad. 😘";
+                startRain();
+                setTimeout(() => rain.style.display = "none", 5000);
+            }
+        }
+
+        function createEmoji(emoji) {
+            const el = document.createElement('div');
+            el.innerText = emoji;
+            el.style.position = 'fixed';
+            el.style.left = '50%';
+            el.style.top = '50%';
+            el.style.fontSize = '2rem';
+            el.style.pointerEvents = 'none';
+            el.style.zIndex = '1002';
+            document.body.appendChild(el);
+
+            const angle = Math.random() * Math.PI * 2;
+            const dist = 100 + Math.random() * 150;
+            const tx = Math.cos(angle) * dist;
+            const ty = Math.sin(angle) * dist;
+
+            el.animate([
+                { transform: 'translate(-50%, -50%) scale(0)', opacity: 1 },
+                { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(1.5)`, opacity: 0 }
+            ], { duration: 2000, easing: 'ease-out' }).onfinish = () => el.remove();
+        }
+
+        function startRain() {
+            const rain = document.getElementById('rain-effect');
+            rain.style.display = "block";
+            rain.innerHTML = "";
+            for(let i=0; i<50; i++) {
+                const drop = document.createElement('div');
+                drop.classList.add('drop');
+                drop.style.left = Math.random() * 100 + '%';
+                drop.style.animationDelay = Math.random() + 's';
+                rain.appendChild(drop);
+            }
+        }
+
+        // --- 5. Shayari Rotator ---
+        const shayaris = [
+            "“Tujhe dekhke to chaand bhi sharma jaaye,<br>Bas uss din ka intejar ki tu meri dulhan banke aaye.”",
+            "“Tum haath jo tham lo mera,<br>Chhat jaye har bura andhera”",
+            "“Ek dua hai meri bhagwan se,<br>Bas tujhe aise hi chahu mai jyada apni jaan se.”"
+        ];
+        let shayariIndex = 0;
+        function nextShayari() {
+            shayariIndex = (shayariIndex + 1) % shayaris.length;
+            const container = document.getElementById('shayari-container');
+            container.style.opacity = 0;
+            setTimeout(() => {
+                container.innerHTML = `<p class="text-2xl font-handwritten mb-4">${shayaris[shayariIndex]}</p><p class="text-sm text-gray-500">— For my Ruhi</p>`;
+                container.style.opacity = 1;
+            }, 500);
+        }
+
+        // --- 6. Fireworks Simulation ---
+        function createFirework() {
+            const anchor = document.getElementById('fireworks-anchor');
+            for(let i=0; i<12; i++) {
+                const f = document.createElement('div');
+                f.classList.add('firework');
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * 400;
+                f.style.left = x + 'px';
+                f.style.top = y + 'px';
+                anchor.appendChild(f);
+                
+                f.animate([
+                    { transform: 'scale(0)', opacity: 1 },
+                    { transform: 'scale(30)', opacity: 0 }
+                ], { duration: 1000, easing: 'ease-out' }).onfinish = () => f.remove();
+            }
+        }
+        setInterval(createFirework, 2000);
+
+        // --- 7. Mascot ---
+        const mascotMessages = [
+            "She is my home 💕",
+            "Forever & Always ♾️",
+            "Ruhi is the best! 🌸",
+            "I love her smile 🥹"
+        ];
+        let mascotIdx = 0;
+        function toggleMascot() {
+            const bubble = document.getElementById('mascot-bubble');
+            bubble.style.display = (bubble.style.display === 'block') ? 'none' : 'block';
+            bubble.innerText = mascotMessages[mascotIdx];
+            mascotIdx = (mascotIdx + 1) % mascotMessages.length;
+        }
+
+        // --- 8. Music Sim ---
+        let playing = false;
+        document.getElementById('musicToggle').onclick = () => {
+            playing = !playing;
+            document.getElementById('musicIcon').innerText = playing ? '⏸️' : '🎵';
+            // In a real browser, you'd trigger audio.play() here.
+        };
+    </script>
+</body>
+</html>
